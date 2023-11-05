@@ -21,10 +21,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.arilson1.climaplant",
+      "config": {
+        "usesPermissions": ["com.android.permission.INTERNET"]
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b9cedb0e-84e7-4a3c-8280-26ca41966877"
+      }
     }
   }
 }
