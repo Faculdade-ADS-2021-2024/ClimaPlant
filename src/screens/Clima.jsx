@@ -3,6 +3,7 @@ import { StyleSheet, View, TextInput, TouchableHighlight, Text } from "react-nat
 
 import { EvilIcons } from '@expo/vector-icons';
 import { getClima } from "../services/climaService";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export function Clima() {
 
@@ -40,8 +41,23 @@ export function Clima() {
                     <EvilIcons name="search" size={24} color="#fff" />
                 </TouchableHighlight>
             </View>
-            <View>
-                <Text>{cidade}</Text>
+            <View style={{ width: '100%', alignItems: 'center' }}>
+                <Text style={styles.nomeCity}>{cidade}</Text>
+                <View style={styles.card}>
+                    <MaterialCommunityIcons name="weather-night" size={64} color="black" />
+                    <Text style={{fontSize: 24, fontWeight: "bold"}}>{clima.list[0].main.temp}</Text>
+                    <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-around', padding: 10}}>
+                        <Text style={{fontSize: 20, fontWeight: "bold"}}>Min: {clima.list[0].main.temp_min}</Text>
+                        <Text style={{fontSize: 20, fontWeight: "bold"}}>Max: {clima.list[0].main.temp_max}</Text>
+                    </View>
+                </View>
+                <View>
+                    <View>
+                        {/* <Text>{clima.list[0].main.temp}</Text>
+                        <Text>{clima.list[0].main.temp}</Text>
+                        <Text>{clima.list[0].main.temp}</Text> */}
+                    </View>
+                </View>
             </View>
         </View>
     );
@@ -56,7 +72,6 @@ const styles = StyleSheet.create({
     },
     header: {
         width: '100%',
-        flex: 1,
         flexDirection: 'row',
     },
     input: {
@@ -78,5 +93,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#008080',
         borderRadius: 10
+    },
+    nomeCity: {
+        margin: 12,
+        fontSize: 24,
+        fontWeight: "bold"
+    },
+    card: {
+        width: '100%',
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 12
     }
 });
