@@ -76,7 +76,7 @@ export function Home() {
                     </View>
                     <View style={styles.box}>
                         <Ionicons name="water" size={57} color="#4169e1" />
-                        <Text style={styles.boxText}>{umidade}0</Text>
+                        <Text style={styles.boxText}>{umidade}</Text>
                     </View>
                 </View>
             </View>
